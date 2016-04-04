@@ -20,8 +20,8 @@ $PluginInfo['AutoBury'] = array(
 	'Version' => '0.1',
 	'RequiredApplications' => array('Vanilla' => '2.2', 'Yaga' => '1.1'),
 	'MobileFriendly' => true,
-	'HasLocale' => TRUE,
-	'RegisterPermissions' => FALSE,
+	'HasLocale' => true,
+	'RegisterPermissions' => true,
     'SettingsUrl' => '/settings/autobury',
 	'SettingsPermission' => 'Garden.Settings.Manage',
 	'Author' => 'Zachary Doll',
@@ -33,9 +33,11 @@ $PluginInfo['AutoBury'] = array(
 class AutoBury extends Gdn_Plugin {
 	
     public function settingsController_autoBury_create($sender) {
-        $sender->SetData('Title', $this->getPluginKey('Name'));
         $sender->Permission('Garden.Settings.Manage');
+        $sender->addSideMenu('settings/autobury');
+        $sender->SetData('Title', $this->getPluginKey('Name'));
         $sender->SetData('PluginDescription', $this->GetPluginKey('Description'));
+        $sender->AddCssFile('settings.css', $this->getPluginFolder(false));
         $validation = new Gdn_Validation();
         $configurationModel = new Gdn_ConfigurationModel($validation);
         $configurationModel->SetField(array(
@@ -79,7 +81,7 @@ class AutoBury extends Gdn_Plugin {
 	
 	private function addResources($sender) {
         $sender->addDefinition('AutoBury.Translation', t('This item is buried, click to show'));
-		$sender->AddJsFile($this->GetResource('js/autobury.js', FALSE, FALSE));
-		$sender->AddCssFile($this->GetResource('design/autobury.css', FALSE, FALSE));
+		$sender->AddJsFile('autobury.js', $this->getPluginFolder(false));
+		$sender->AddCssFile('autobury.css', $this->getPluginFolder(false));
     }
 }
