@@ -1,0 +1,43 @@
+/* Copyright 2016 Zachary Doll */
+
+.DataList .Item.Buried {
+  height: 14px;
+  overflow: hidden;
+}
+
+.DataList .Item.Buried.Revealed {
+  height: inherit;
+  overflow: auto;
+}
+
+.DataList .Item.Buried .Meta {
+  display: none;
+}
+
+.DataList .Item.Buried.Revealed .Meta {
+  display: inherit;
+}
+
+.DataList .Item.Buried .BuriedOverlay {
+  cursor: pointer;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  font-style: italic;
+  text-align: center;
+  color: #cccccc;
+  vertical-align: middle;
+}
+
+.DataList .Item.Buried .BuriedOverlay:hover {
+  background: #cccccc;
+  color: #ffffff;
+}
+
+.DataList .Item.Buried.Revealed .BuriedOverlay {
+  display: none;
+}
