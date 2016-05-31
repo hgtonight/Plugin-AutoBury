@@ -17,7 +17,7 @@
 $PluginInfo['AutoBury'] = array(
   'Name' => 'Auto Bury',
   'Description' => 'Automatically buries comments and discussions, preventing them from being shown.',
-  'Version' => '0.1',
+  'Version' => '0.2',
   'RequiredApplications' => array('Vanilla' => '2.2', 'Yaga' => '1.1'),
   'MobileFriendly' => true,
   'HasLocale' => true,
