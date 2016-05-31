@@ -15,19 +15,19 @@
  */
 
 $PluginInfo['AutoBury'] = array(
-	'Name' => 'Auto Bury',
-	'Description' => 'Automatically buries comments and discussions, preventing them from being shown.',
-	'Version' => '0.1',
-	'RequiredApplications' => array('Vanilla' => '2.2', 'Yaga' => '1.1'),
-	'MobileFriendly' => true,
-	'HasLocale' => true,
-	'RegisterPermissions' => true,
-    'SettingsUrl' => '/settings/autobury',
-	'SettingsPermission' => 'Garden.Settings.Manage',
-	'Author' => 'Zachary Doll',
-	'AuthorEmail' => 'hgtonight@daklutz.com',
-	'AuthorUrl' => 'http://www.daklutz.com',
-	'License' => 'GPLv2'
+  'Name' => 'Auto Bury',
+  'Description' => 'Automatically buries comments and discussions, preventing them from being shown.',
+  'Version' => '0.1',
+  'RequiredApplications' => array('Vanilla' => '2.2', 'Yaga' => '1.1'),
+  'MobileFriendly' => true,
+  'HasLocale' => true,
+  'SettingsUrl' => '/settings/autobury',
+  'SettingsPermission' => 'Garden.Settings.Manage',
+  'Author' => 'Zachary Doll',
+  'AuthorEmail' => 'hgtonight@daklutz.com',
+  'AuthorUrl' => 'http://www.daklutz.com',
+  'License' => 'GPLv2',
+  'GitHub' => 'hgtonight/Plugin-AutoBury',
 );
 
 class AutoBury extends Gdn_Plugin {
